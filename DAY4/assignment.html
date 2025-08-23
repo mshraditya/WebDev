@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment hai bhai </title>
+</head>
+<body>
+    <caption>Student Information</caption>
+    <table border="black">
+    
+                <tr>
+                    <th rowspan="6">Info</th>
+                    <th rowspan="2">Name</th>
+                    <th colspan="2">Address</th>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <th>House</th>
+                </tr>
+    
+        <tr>
+            <td>A</td>
+            <td>Delhi</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td>Mumbai</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>Kolkata</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td>Pune</td>
+            <td>4</td>
+        </tr>
+    </table>
+    <br>
+    <form action="/server">
+        <div>
+            <label for="nm">Name: </label>
+            <input type="text" name="name" id="nm">
+            </div>
+            <br>
+            Sex: 
+            <input type="radio" id="mh" value="male" name="gender">
+            <label for="mh">Male</label>
+            <input type="radio" id="fh" vale="Female" name="gender">
+            <label for="fh">female</label>
+            <br>
+            <br>
+
+            <div>
+                country: 
+                <select name="country" id="country">
+  <option value="India">India</option>
+  <option value="China">China</option>
+  <option value="United States">United States</option>
+  <option value="Indonesia">Indonesia</option>
+  <option value="Pakistan">Pakistan</option>
+  <option value="Nigeria">Nigeria</option>
+  <option value="Brazil">Brazil</option>
+  <option value="Bangladesh">Bangladesh</option>
+  <option value="Russia">Russia</option>
+  <option value="Ethiopia">Ethiopia</option>
+  <option value="Mexico">Mexico</option>
+  <option value="Japan">Japan</option>
+  <option value="Egypt">Egypt</option>
+  <option value="Philippines">Philippines</option>
+  <option value="DR Congo">DR Congo</option>
+  <option value="Vietnam">Vietnam</option>
+  <option value="Iran">Iran</option>
+  <option value="Turkey">Turkey</option>
+  <option value="Germany">Germany</option>
+  <option value="Thailand">Thailand</option>
+  <option value="Tanzania">Tanzania</option>
+  <option value="United Kingdom">United Kingdom</option>
+  <option value="France">France</option>
+  <option value="South Africa">South Africa</option>
+  <option value="Italy">Italy</option>
+  <option value="Kenya">Kenya</option>
+  <option value="Myanmar">Myanmar</option>
+  <option value="Colombia">Colombia</option>
+  <option value="South Korea">South Korea</option>
+  <option value="Sudan">Sudan</option>
+  <option value="Uganda">Uganda</option>
+  <option value="Spain">Spain</option>
+  <option value="Algeria">Algeria</option>
+  <option value="Iraq">Iraq</option>
+  <option value="Argentina">Argentina</option>
+  <option value="Afghanistan">Afghanistan</option>
+  <option value="Yemen">Yemen</option>
+  <option value="Canada">Canada</option>
+  <option value="Angola">Angola</option>
+  <option value="Ukraine">Ukraine</option>
+  <option value="Morocco">Morocco</option>
+  <option value="Poland">Poland</option>
+  <option value="Uzbekistan">Uzbekistan</option>
+  <option value="Malaysia">Malaysia</option>
+  <option value="Mozambique">Mozambique</option>
+  <option value="Ghana">Ghana</option>
+  <option value="Peru">Peru</option>
+  <option value="Saudi Arabia">Saudi Arabia</option>
+  <option value="Madagascar">Madagascar</option>
+  <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+</select>
+            </div>
+            <br>
+
+            <div>
+                <label for="message">Message:</label>
+                <br>
+                <textarea name="message" id="message" rows="6" cols="35"></textarea>
+            </div>
+            <br>
+
+            <div>
+                <input type="checkbox" name="check" id="chk">
+                subscribe?
+            </div>
+            <br>
+
+            <button type="submit">Submit</button> 
+    </form>
+    <br>
+    <form action="/server">
+         <h1>Feedback Form</h1>
+         <div>
+         <label for="name">Name: </label>
+         <input type="text" name="name" id="name" placeholder="Write Your name ">
+         </div>
+         <br>
+         <div>
+            <label for="email">Email: </label>
+            <input type="email" id="email" placeholder="Write Your email">
+         </div>
+         <br>
+         <div>
+             <label for="message">Message</label>
+             <br>
+             <textarea name="message" id="message"></textarea>
+         </div>
+         <br>
+         <div>
+            Rate us our of 5:
+            <br>
+            <input type="radio" name="stars" id="star" value="1">
+            <label for="star">1</label>
+            <br>
+            <input type="radio" name="stars" id="star" value="2">
+           <label for="star">2</label>
+            <br>
+            <input type="radio" name="stars" id="star" value="3">
+            <label for="star">3</label>
+            <br>
+            <input type="radio" name="stars" id="star" value="4">
+           <label for="star">4</label>
+            <br>
+            <input type="radio" name="stars" id="star" value="5">
+            <label for="star" >5</label>
+         </div>
+         <br>
+         <button type="submit">Send your message!</button>
+
+    </form>
+</body>
+</html>

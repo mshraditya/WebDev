@@ -1,0 +1,54 @@
+h1{
+    color:  rgb(211, 45, 57);
+}
+#login{
+    background-color: rgb(211, 45, 57);
+    color: white;
+    border-radius: 20px;
+    border-style: solid;
+    border: 0px;
+}
+#signup{
+    background-color: rgb(211, 45, 57);
+    color: white;
+    border-radius: 16px;
+    border: 0px;
+
+
+}
+.upvote{
+   background-color: green;
+   color: aliceblue;
+    border-radius: 10px;
+    border: 0px;
+
+}
+p a {
+    color: purple;
+    background-color: yellow;
+    text-decoration: none;
+}
+nav ul li a {
+    color: brown;
+}
+p+h3{
+    text-decoration: underline;
+    color:red;
+}
+.upvote+button{
+    background-color:cornflowerblue;
+    border-radius: 10px;
+    border: 0px;
+}
+div>input{
+            background-color: rgb(204, 200, 200);
+            border: 0px;
+            border-radius: 16px;
+            width: 200px;
+}
+input[type="text"]{
+    color: blue;
+}
+input[type="password"]{
+    color: green;
+}

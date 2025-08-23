@@ -1,0 +1,39 @@
+ #csp{
+    color: blueviolet;
+ }
+ *{
+    text-align: center;
+ }
+ h1,h2,h3,h5,h6,h4{
+        font-family: Georgia ;
+ }
+ .content{
+     background-color: cornflowerblue;
+   color: white;
+ }
+ div>button{
+    background-color: purple;
+    color: azure;
+ }
+button:hover{
+     background-color: yellow;
+    color: blue;
+}
+p:nth-child(odd){
+    color: yellow !important;
+}
+h1::first-letter{
+    color: red;
+}
+#yes:checked+label{
+    color: darkgreen;
+}
+  
+button{
+    border-radius: 200px ;
+    border: none;
+    padding: 8px 32px;
+    height: 40px;
+    width: 120px;
+}
+
