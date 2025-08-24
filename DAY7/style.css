@@ -1,3 +1,26 @@
 h1{
-    text-align: center;
+    color: blue;
+    font-style:oblique;
+        text-align: center;
+        margin: 0;
 }
+div{
+    border: solid;
+    border-radius: 20px;
+    border-color: black;
+    border-width: 2px;
+    padding: 30px;
+    margin: 20px 200px 20px;
+   
+
+}
+button{
+     width: 100px;
+    height: 30px;
+    border-radius: 100px;
+    border: 0px;
+    background-color: #1DB954;
+    font-size: medium;
+    
+}
+  

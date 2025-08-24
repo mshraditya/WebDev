@@ -1,0 +1,38 @@
+ #outer {
+    border: solid;
+    height: 200px;
+    width: 70px;
+    border-width: 2px;
+    border-color: black;
+    background-color: rgb(231, 225, 225);
+ }
+ #f{
+     border: solid;
+    height: 50px;
+    width: 50px;
+    border-width: 2px;
+    border-color: black;
+    margin: 10px;
+    border-radius: 100%;
+    background-color: red;
+ }
+ #s{
+     border: solid;
+    height: 50px;
+    width: 50px;
+    border-width: 2px;
+    border-color: black;
+    margin: 10px;
+    border-radius: 100%;
+    background-color: yellow;
+ }
+ #t{
+     border: solid;
+    height: 50px;
+    width: 50px;
+    border-width: 2px;
+    border-color: black;
+    margin: 10px;
+    border-radius: 100%;
+    background-color: green;
+ }
