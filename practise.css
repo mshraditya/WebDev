@@ -1,38 +1,29 @@
- #outer {
-    border: solid;
-    height: 200px;
-    width: 70px;
-    border-width: 2px;
-    border-color: black;
-    background-color: rgb(231, 225, 225);
+ #mouth{
+   border: 2px solid rgb(245 163 0);
+   height: 500px;
+   width: 500px;
+   margin: 50px auto;
+   border-radius: 50%;
+   background-color:rgb(245 163 0) ;
+   padding: 8px;
  }
- #f{
-     border: solid;
-    height: 50px;
-    width: 50px;
-    border-width: 2px;
-    border-color: black;
-    margin: 10px;
-    border-radius: 100%;
-    background-color: red;
+ #eye1{
+  border: 1px solid rgb(0, 0, 0);
+   border-radius: 50%;
+  height: 80px;
+   width: 80px;
+   display: inline-block;
+   margin: 66px;
+   margin-right: 100PX;
+   margin-top: 150px;
+   background-color: black;
  }
- #s{
-     border: solid;
-    height: 50px;
-    width: 50px;
-    border-width: 2px;
-    border-color: black;
-    margin: 10px;
-    border-radius: 100%;
-    background-color: yellow;
- }
- #t{
-     border: solid;
-    height: 50px;
-    width: 50px;
-    border-width: 2px;
-    border-color: black;
-    margin: 10px;
-    border-radius: 100%;
-    background-color: green;
+ #smile{
+  border: 1px solid rgb(0, 0, 0);
+  height: 80px;
+   width: 250px;
+   margin-left: 113px;
+   margin-top:54px ;
+   background-color: brown;
+   border-radius: 0px 0px 110px 110px;
  }

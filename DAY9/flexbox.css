@@ -1,0 +1,28 @@
+h1{
+    text-align: center;
+}
+#outerbox{
+        height: 900px;
+        width: 1500px;
+        border: 4px solid black;
+        /* border-radius: 1.618em; */
+        margin: 0px auto;
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: space-evenly;
+    }
+div{
+
+    height: 200px;
+        width: 100px;
+        border: 1px solid black;
+        text-align: center;
+        font-size: 1.234em;
+        /* display: flex;
+        flex-direction: row ;   
+        justify-content: left;   /* this is used to to move content to any direction*/
+        /* flex-wrap:wrap-reverse; */
+        /* justify-content: space-between;
+        align-items:baseline; */ 
+
+}
