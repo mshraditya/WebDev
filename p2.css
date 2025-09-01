@@ -1,0 +1,18 @@
+.loader {
+border: 16px solid #f3f3f3;
+border-top: 16px solid rgb(6, 180, 38); 
+border-bottom: 16px solid rgb(255, 145, 0);
+
+border-radius: 50%;
+width: 300px;
+height: 300px;
+animation: spin 1s linear infinite;
+}
+@keyframes spin {
+0% {
+ rotate: 0deg;
+}
+100% {
+  rotate: 360deg;
+}
+}

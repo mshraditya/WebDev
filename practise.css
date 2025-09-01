@@ -1,29 +1,72 @@
- #mouth{
-   border: 2px solid rgb(245 163 0);
-   height: 500px;
-   width: 500px;
-   margin: 50px auto;
-   border-radius: 50%;
-   background-color:rgb(245 163 0) ;
-   padding: 8px;
+.container{
+    margin: auto;
+    border: 1px solid white;
+    height: 900px;
+    width: 1700px;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(12,1fr);
+     font-size: 30px;
+     grid-gap: 6px;
+}
+#item{
+    background-color: rgba(234, 139, 164, 0.94);
+    border: 0.5px solid white;
+}
+.header{
+    grid-column: 1/span 12;
+}
+.sidebar{
+    grid-row: 2/span 10;
+    grid-column: 1/span 3;
+}
+ .navigation{
+    grid-column: 4/span 6;
  }
- #eye1{
-  border: 1px solid rgb(0, 0, 0);
-   border-radius: 50%;
-  height: 80px;
-   width: 80px;
-   display: inline-block;
-   margin: 66px;
-   margin-right: 100PX;
-   margin-top: 150px;
-   background-color: black;
+ .ads{
+    grid-column: 10/span 3;
+    grid-row: 2/span 10;
  }
- #smile{
-  border: 1px solid rgb(0, 0, 0);
-  height: 80px;
-   width: 250px;
-   margin-left: 113px;
-   margin-top:54px ;
-   background-color: brown;
-   border-radius: 0px 0px 110px 110px;
+ .main{
+      grid-column: 4/span 6;
+    grid-row: 3/span 9;
  }
+ .footer{
+      grid-column: 1/span 12;
+ }
+ @media (max-width:720px){
+       #item{
+    background-color: rgba(234, 139, 164, 0.94);
+    border: 0.5px solid white;
+}
+.header{
+    grid-column: 1/span 12;
+}
+.navigation{
+   grid-column: 1/span 12;
+}
+.sidebar{
+    grid-row: 3/span 9;
+    grid-column: 1/span 3;
+}
+ .ads{
+    grid-column: 1/span 3;
+    grid-row: 11/span 1;
+ }
+ .main{
+      grid-column: 4/span 9;
+    grid-row: 3/span 9;
+ }
+ .footer{
+      grid-column: 4/span 9;
+      grid-row: 11/span 1;
+ }
+}
+
+
+ 
+
+ 
+ 
+
+ 
