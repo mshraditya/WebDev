@@ -52,6 +52,7 @@ a{
      flex: 1;
      border-radius: 1rem;
      overflow: auto;
+     padding: 0 1.5rem 0 1.5rem;
 
 }
 .music-player{
@@ -136,6 +137,7 @@ a{
      justify-content: space-between;
      align-items: center;
      padding: 0.4rem 0 0.4rem 0;
+     z-index: 10;
  }
  .sticky-nav-icons img{
      height: 2rem;
@@ -165,6 +167,180 @@ a{
           display: none;
      }
  }
+ .cards-container{
+     display: flex;
+     flex-wrap: wrap;
+      
+ }
+ .card{
+     background-color: #111010;
+     width: 150px;
+     border-radius: 1rem;
+     padding: 1rem ;
+     margin-left: 1.5rem;
+     margin-bottom: 1.5rem;
+ }
+ .card-img{
+     border-radius: 0.5rem;
+     width: 100%;
+
+ }
+ .card-title{
+     font-weight: 700;
+     margin: 6px 0 6px 0;
+ }
+ .card-info{
+     color: rgb(122 122 122);
+     font-size: 0.85rem;
+     font-weight: 600;
+ }
+ .footer{
+     height: 300px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+ .line{
+     height:50%;
+     width: 90%;
+     border-top: 1px solid white;
+     opacity: 0.4;
+ }
+ .music-player{
+     display: flex;
+      align-items: center;
+     justify-content: space-between;
+
+ }
+ .album{
+     width: 25%;
+     display: flex;
+     align-items: center;
+ }
+ .player{
+     width: 50%;
+ }
+  .controls{
+     /* width: 25%; */
+     display: flex;
+     align-items: center;
+     /* justify-content: left; */
+  }
+  .player-controls{
+      display: flex;
+      align-items: center;
+     justify-content:center;
+
+  }
+  .player-controls-icon{
+     height:1rem;
+     margin-right: 1rem;
+     opacity: 0.7;
+  }
+  .player-controls-icon:hover{
+     opacity: 1;
+  }
+  .pause{
+     opacity: 1;
+       height:1.9rem;
+  }
+  .playback-bar{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+  }
+  .progress-bar{
+     width: 50%;
+     appearance: none;
+     background-color: transparent;
+     cursor: pointer;
+  }
+  .progress-bar::-webkit-slider-runnable-track{
+     background-color: #ddd;
+     border-radius: 100px;
+     height: 0.2rem;
+  }
+  .progress-bar::-webkit-slider-thumb{
+     appearance: none;
+     height: 1rem;
+     width:1rem;
+     background-color: #1DB954;
+     border-radius: 50%;
+     margin-top: -6px;
+  }
+  .album-image{
+      height: 3rem;
+     width:3rem;
+     border-radius: 0.4rem;
+  }
+  .text{
+     padding-left: 6px;
+     padding-right: 6.5rem;
+  }
+  .album-title{
+     font-weight: 700;
+     margin-bottom: 8px;
+  }
+  .album-detail{
+     font-size:12px;
+     opacity: 0.5;
+  }
+  .album-control{
+     display: flex;
+      justify-content: space-between;
+       align-items: end;
+    
+  }
+  .album-control img{
+     width:2rem;
+     opacity: 0.5;
+
+  }
+  .heart{
+          margin-bottom: 3px;
+          margin-right: 3px;
+  }
+   .album-control img:hover{
+     opacity: 1;
+   }
+   .controls-icons{
+     display: flex;
+     
+   }
+   .controls img{
+     width: 2rem ;
+     height: 2rem ;
+     /* margin-right: 8px; */
+   }
+    .sound-bar img{
+      width: 2rem ;
+     height: 2rem ;
+     margin-right: 8px;
+    }
+    .sound-bar{
+     display: flex;
+    }
+    .sbar{
+     width: 50%;
+     appearance: none;
+     background-color: transparent;
+     cursor: pointer;
+    }
+    .sbar::-webkit-slider-runnable-track{
+     background-color: #ddd;
+     border-radius: 100px;
+     height: 0.2rem;
+    }
+     .sbar::-webkit-slider-thumb{
+     appearance: none;
+     height: 1rem;
+     width:1rem;
+     background-color: #1DB954;
+     border-radius: 50%;
+     margin-top: -6px;
+  }
+ 
+
 
  
  
