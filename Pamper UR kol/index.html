@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAMPER UR KOL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2 class="animate-text">PAMPER UR KOL</h2>
+  <div>
+    <input id="twHandle" placeholder="Enter Username">
+    <button id="loadTw">Load Twitter Avatar</button>
+    <button id="startBtn">Start 15s</button>
+    <button id="resetBtn">Reset</button>
+    <p class="clicktext">Click canvas first to enable background music</p>
+  </div>
+  <canvas id="cv" width="900" height="500"></canvas>
+  <p class="info">Time: <span id="time">15.0</span>s Hits: <span id="hits">0</span></p>
+  <h3>Leaderboard</h3>
+  <table id="leaderboard">
+    <tr><th>Username</th><th>Total Hits</th></tr>
+  </table>
+  <script >const cv=document.getElementById('cv');
+const ctx=cv.getContext('2d');
+let img=new Image(), imgLoaded=false, scale=1, offsetX=0, offsetY=0;
+let hits=0, timer=15, running=false;
+let mouse={x:cv.width/2,y:cv.height/2};
+let fragments=[]; // image pieces for breaking
+let musicEnabled=false;
+
+// Background music
+const bgMusic = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+bgMusic.loop=true;
+
+// Leaderboard stored in localStorage
+let leaderboard = JSON.parse(localStorage.getItem('kolLeaderboard')||"{}");
+
+// Enable music on first canvas click
+cv.addEventListener('click', ()=>{
+    if(!musicEnabled){
+        bgMusic.play().catch(()=>{});
+        musicEnabled=true;
+    }
+});
+
+// Fit image to canvas
+function fitImage(){
+  const cw=cv.width,ch=cv.height;
+  scale=Math.min(cw/img.width,ch/img.height);
+  offsetX=(cw-img.width*scale)/2;
+  offsetY=(ch-img.height*scale)/2;
+
+  // Split image into fragments
+  fragments = [];
+  const rows = 20, cols = 20;
+  const w = img.width/cols, h = img.height/rows;
+  for(let r=0;r<rows;r++){
+    for(let c=0;c<cols;c++){
+      fragments.push({
+        sx:c*w, sy:r*h, w:w, h:h,
+        x:offsetX+c*w*scale, y:offsetY+r*h*scale,
+        dx:0, dy:0
+      });
+    }
+  }
+}
+
+// Draw loop
+function draw(){
+  ctx.clearRect(0,0,cv.width,cv.height);
+  if(imgLoaded){
+    // Draw each fragment
+    fragments.forEach(f=>{
+      ctx.drawImage(img,f.sx,f.sy,f.w,f.h,f.x+f.dx,f.y+f.dy,f.w*scale,f.h*scale);
+    });
+  }
+  requestAnimationFrame(draw);
+}
+// Smash fragments near (x,y)
+function smash(x,y){
+  if(!running || !imgLoaded) return;
+  hits++; document.getElementById('hits').textContent=hits;
+  fragments.forEach(f=>{
+    const fx = f.x + f.dx + f.w*scale/2;
+    const fy = f.y + f.dy + f.h*scale/2;
+    const dist = Math.hypot(fx-x, fy-y);
+    if(dist<50){
+      f.dx += (Math.random()-0.5)*20;
+      f.dy += (Math.random()-0.5)*20;
+    }
+  });
+  // Screen shake
+  cv.style.transform = `translate(${(Math.random()-0.5)*5}px, ${(Math.random()-0.5)*5}px)`;
+  setTimeout(()=>{cv.style.transform='translate(0,0)';},50);
+}
+
+// Timer
+document.getElementById('startBtn').addEventListener('click',()=>{
+  if(!imgLoaded) return alert('Load Twitter avatar first!');
+  hits=0; document.getElementById('hits').textContent=hits;
+  timer=15; document.getElementById('time').textContent=timer.toFixed(1);
+  running=true;
+  const username = document.getElementById('twHandle').value.trim().replace(/^@/,"")||"Unknown";
+  let last = performance.now();
+  function tick(now){
+    if(!running) return;
+    const dt=(now-last)/1000; last=now;
+    timer-=dt;
+    if(timer<=0){
+      timer=0; running=false;
+      alert('Time up! Hits: '+hits);
+      // Update leaderboard
+      leaderboard[username] = (leaderboard[username]||0)+hits;
+      localStorage.setItem('kolLeaderboard', JSON.stringify(leaderboard));
+      updateLeaderboard();
+    }
+    document.getElementById('time').textContent=timer.toFixed(1);
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+});
+
+// Reset
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  running=false; hits=0; fragments=[]; document.getElementById('hits').textContent=hits; timer=15; document.getElementById('time').textContent=timer.toFixed(1); draw();
+});
+
+// Load Twitter avatar
+document.getElementById('loadTw').addEventListener('click',()=>{
+  let handle=document.getElementById('twHandle').value.trim();
+  if(!handle) return alert('Enter @username');
+  handle = handle.replace(/^@/,"");
+  const avatarUrl = `https://unavatar.io/twitter/${encodeURIComponent(handle)}?fallback=https://via.placeholder.com/400`;
+  imgLoaded=false;
+  img = new Image();
+  img.onload = ()=>{imgLoaded=true; fitImage();}
+  img.onerror = ()=>{alert("Could not load Twitter avatar. Check username.");};
+  img.src=avatarUrl;
+});
+
+// Mouse smash
+cv.addEventListener('click',(e)=>{
+  const rect=cv.getBoundingClientRect();
+  const x=(e.clientX-rect.left)*(cv.width/rect.width);
+  const y=(e.clientY-rect.top)*(cv.height/rect.height);
+  smash(x,y);
+});
+
+// Spacebar smash
+window.addEventListener('mousemove',e=>{
+  const rect=cv.getBoundingClientRect();
+  mouse.x=(e.clientX-rect.left)*(cv.width/rect.width);
+  mouse.y=(e.clientY-rect.top)*(cv.height/rect.height);
+});
+window.addEventListener('keydown',e=>{
+  if(e.code==='Space'){e.preventDefault(); smash(mouse.x,mouse.y);}
+});
+
+// Leaderboard update
+function updateLeaderboard(){
+  const table = document.getElementById('leaderboard');
+  // Remove old rows
+  table.innerHTML="<tr><th>Username</th><th>Total Hits</th></tr>";
+  const sorted = Object.entries(leaderboard).sort((a,b)=>b[1]-a[1]);
+  sorted.forEach(([u,h])=>{
+    const row = table.insertRow();
+    const c1=row.insertCell(0); const c2=row.insertCell(1);
+    c1.textContent=u; c2.textContent=h;
+  });
+}
+
+// Initial leaderboard render
+updateLeaderboard();
+draw();</script>
+</body>
+</html>

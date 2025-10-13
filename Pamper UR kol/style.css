@@ -1,0 +1,146 @@
+@font-face {
+  font-family: "Rubik DS";
+  src: url("RubikSemiBoldDS-Regular-CZfVeAWU.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+*{
+      margin: auto;
+      font-family:Rubik DS;
+}
+body {
+  margin: 0;
+  background: #071322;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: system-ui;
+  color: #fff;
+  background-image: url("./abstract-dark-green-futuristic-gaming-background-with-hexagon-pattern-dark-green-geometric-background-for-banner-or-offline-stream-gaming-background-template-vector.jpg");
+   background-size: repeat;
+}
+canvas {
+  background: #071322;
+  margin-top: 10px;
+  height: 25rem;
+  width:25rem;
+  border-radius: 100%;
+  margin-bottom: 15px;
+}
+.clicktext{
+    text-align: center;
+    font-size: 1rem;
+}
+.info{
+    font-size: 2.5rem;
+}
+
+ 
+input{
+height: 3rem;
+width: 25rem;
+  border-radius: 25px;
+margin-top: 1.5rem;
+margin-bottom: 1rem;
+padding-left: 1rem;
+border: none;
+font-size: 1.5rem;
+}
+ 
+
+button {
+    display: block;
+   background: linear-gradient(135deg,rgb(60,225, 42), rgb(5, 15, 4));
+    color: #fff;
+    border: none;
+    width: 25rem;
+    height: 3rem;
+    margin: 1rem;
+    padding: 6px 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.5rem;
+
+
+}
+
+#leaderboard {
+  margin-top: 15px;
+  border-collapse: collapse;
+}
+
+#leaderboard th,
+#leaderboard td {
+  border: 1px solid #fff;
+  padding: 4px 8px;
+}
+    .animate-text {
+      font-size: 3rem;
+      font-weight: bold;
+      animation: gapPulse 3s infinite alternate ease-in-out;
+    }
+
+    @keyframes gapPulse {
+      from {
+        letter-spacing: 2px;   
+      }
+      to {
+        letter-spacing: 7px;   
+      }
+    }
+h3,h2{
+  margin-top: 20px;
+  font-size: 2.5rem;
+  color: rgb(60,225, 42);
+  text-shadow: 0 0 8px rgba(255, 221, 87, 0.7);
+}
+
+#leaderboard {
+  width: 80%;
+  max-width: 500px;
+  margin: 12px auto;
+  border-collapse: collapse;
+  background: rgba(20, 20, 40, 0.85);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.3);
+}
+
+#leaderboard th {
+  background: linear-gradient(135deg,rgb(60,225, 42), rgb(9, 64, 3));
+  color: #071322;
+  padding: 12px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#leaderboard td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.95rem;
+}
+
+#leaderboard tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#leaderboard tr:hover td,
+#leaderboard tr:hover th {
+  background: rgb(0, 255, 30);
+  transition: background 0.3s ease;
+}
+
+#leaderboard tr:nth-child(2) td {
+  background: rgba(255, 223, 70, 0.15);
+  font-weight: bold;
+  color: #ffdd57;
+}
+#leaderboard tr:first-child th:first-child { border-top-left-radius: 12px; }
+#leaderboard tr:first-child th:last-child { border-top-right-radius: 12px; }
+button:hover {
+  transform: scale(1.1);  
+  background: #06d85d;
+  transition: 1s;    
+}
