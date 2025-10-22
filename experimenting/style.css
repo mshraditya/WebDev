@@ -1,0 +1,9 @@
+div{
+    border: 2px solid black;
+    height: 7rem;
+    width: 5rem;
+    margin: 7px;   
+}
+ body{
+    display: flex;
+ }

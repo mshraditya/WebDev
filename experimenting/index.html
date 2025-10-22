@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Universal Downloader</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+      color: white;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      backdrop-filter: blur(10px);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      color: #00d9ff;
+      text-shadow: 0 0 10px #00d9ff;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      margin-bottom: 20px;
+      font-size: 1em;
+      transition: box-shadow 0.3s ease;
+    }
+
+    input:focus {
+      box-shadow: 0 0 10px #00d9ff;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, #00d9ff, #007bff);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00d9ff;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .status {
+      margin-top: 15px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌐 Universal Downloader</h1>
+    <input type="text" id="urlInput" placeholder="Paste your link here..." />
+    <button id="downloadBtn">Download</button>
+    <div class="status" id="statusMsg">Ready to fetch your file 🚀</div>
+  </div>
+  <script>
+    const btn = document.getElementById("downloadBtn");
+    const input = document.getElementById("urlInput");
+    const status = document.getElementById("statusMsg");
+
+    btn.addEventListener("click", () => {
+      const url = input.value.trim();
+      if (!url) {
+        status.textContent = "⚠️ Please enter a valid link.";
+        status.style.color = "#ff8080";
+        return;
+      }
+
+      status.textContent = "⏳ Processing your download...";
+      status.style.color = "#ccc";
+
+      // Placeholder for actual logic
+      setTimeout(() => {
+        status.textContent = "✅ Download started successfully!";
+        status.style.color = "#00ffcc";
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
